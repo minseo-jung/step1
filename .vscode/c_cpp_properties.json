@@ -1,0 +1,51 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/noetic/include/**",
+        "/home/minseo/git/autoku/devel/include/**",
+        "/home/minseo/git/autoku/src/app/planning/behavior_planning/include/**",
+        "/home/minseo/git/autoku/src/app/perception/camera_perception/include/**",
+        "/home/minseo/git/autoku/src/bsw/device/vehicle/communication_pkg/include/**",
+        "/home/minseo/git/autoku/src/bsw/device/vehicle/communication_platform/include/**",
+        "/home/minseo/git/autoku/src/app/map/global_route/include/**",
+        "/home/minseo/git/autoku/src/app/control/keyboard_command_control/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_core/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_examples/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_io/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_maps/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_matching/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_projection/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_python/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_routing/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_traffic_rules/include/**",
+        "/home/minseo/git/autoku/src/app/map/Lanelet2/lanelet2_validation/include/**",
+        "/home/minseo/git/autoku/src/app/control/lateral_control/include/**",
+        "/home/minseo/git/autoku/src/app/perception/lidar_perception/include/**",
+        "/home/minseo/git/autoku/src/app/control/longitudinal_control/include/**",
+        "/home/minseo/git/autoku/src/bsw/device/gnss/novatel_gps_driver/novatel_gps_driver/include/**",
+        "/home/minseo/git/autoku/src/bsw/device/gnss/novatel_oem7_driver/src/novatel_oem7_driver/include/**",
+        "/home/minseo/git/autoku/src/app/planning/planning_space/include/**",
+        "/home/minseo/git/autoku/src/app/localization/pose_estimation/include/**",
+        "/home/minseo/test_ws/src/step1/pubsubcpp/include/**",
+        "/home/minseo/git/autoku/src/bsw/device/vehicle/serial/include/**",
+        "/home/minseo/git/autoku/src/app/localization/state_generator/include/**",
+        "/home/minseo/git/autoku/src/app/planning/trajectory_planning/include/**",
+        "/home/minseo/git/autoku/src/bsw/device/gnss/ublox/ublox_gps/include/**",
+        "/home/minseo/git/autoku/src/rte/msg/ublox_msgs/include/**",
+        "/home/minseo/git/autoku/src/bsw/device/gnss/ublox/ublox_serialization/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

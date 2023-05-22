@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(test_py)
+project(pubsubcpp)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -9,7 +9,6 @@ project(test_py)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  rospy
   std_msgs
 )
 
@@ -104,8 +103,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES test_py
-  CATKIN_DEPENDS roscpp rospy std_msgs
+#  LIBRARIES pubsubcpp
+  CATKIN_DEPENDS roscpp std_msgs
 #  DEPENDS system_lib
 )
 
@@ -120,10 +119,22 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+add_executable(cpptalker src/cpptalker.cpp)
+target_link_libraries(cpptalker
+  ${catkin_LIBRARIES}
+)
+add_dependencies(cpptalker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
+add_executable(cpplistener src/cpplistener.cpp)
+target_link_libraries(cpplistener
+  ${catkin_LIBRARIES}
+)
+add_dependencies(cpplistener ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/test_py.cpp
+#   src/${PROJECT_NAME}/pubsubcpp.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -134,7 +145,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/test_py_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/pubsubcpp_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -160,9 +171,10 @@ include_directories(
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
- catkin_install_python(PROGRAMS scripts/talker.py scripts/listener.py
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# catkin_install_python(PROGRAMS
+#   scripts/my_python_script
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 ## Mark executables for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_executables.html
@@ -197,7 +209,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_test_py.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_pubsubcpp.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
