@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="test_py" type="talker.py"  name="talker1" />
+    <node pkg="test_py" type="listener.py" name="listener1"/>
+    
+    <node pkg="test_py" type="cpptalker" name="talker2"/>
+    <node pkg="test_py" type="cpplistener" name="listener2"/>
+
+</launch>
