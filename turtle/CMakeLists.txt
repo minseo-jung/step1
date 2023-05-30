@@ -126,6 +126,12 @@ target_link_libraries(turtle_control
 )
 add_dependencies(turtle_control ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_executable(turtle_make_circle src/turtle_make_circle.cpp)
+target_link_libraries(turtle_make_circle
+  ${catkin_LIBRARIES}
+)
+add_dependencies(turtle_make_circle ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/turtle.cpp

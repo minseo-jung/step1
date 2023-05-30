@@ -2,7 +2,7 @@
 #include <geometry_msgs/Twist.h>
 
 int main(int argc, char **argv){
-    ros::init(argc, argv, "turtle_make_star");
+    ros::init(argc, argv, "turtle_make_circle");
     ros::NodeHandle nh;
 
     ros::Publisher twist_pub = nh.advertise<geometry_msgs::Twist>("/turtle1/cmd_vel", 10);
@@ -14,15 +14,10 @@ int main(int argc, char **argv){
     ros::Rate loop_rate(1);
 
     while(ros::ok()){
-        if(count % 2 == 0){
-            twist_msgs.linear.x = 2.0;
-            twist_msgs.angular.z = 0.0;
-        }
-        else if(count % 2 == 1){
-            twist_msgs.linear.x = 0.0;
-            twist_msgs.angular.z = 144.0*M_PI/180;
-        }
-        count++;
+
+        twist_msgs.linear.x = 2.0;
+        twist_msgs.angular.z = 1.0;
+
 
         twist_pub.publish(twist_msgs);
 
